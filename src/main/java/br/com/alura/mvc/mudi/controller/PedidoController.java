@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.alura.mvc.mudi.dto.RequisicaoNovoPedido;
 import br.com.alura.mvc.mudi.model.Pedido;
+import br.com.alura.mvc.mudi.model.StatusPedido;
 import br.com.alura.mvc.mudi.repository.PedidoRepository;
 
 @Controller
@@ -33,6 +34,6 @@ public class PedidoController {
 		
 		Pedido pedido = requisicaoNovoPedido.toPedido();
 		pedidoRepository.save(pedido);
-		return "/pedido/formulario";
+		return "redirect:/home";
 	}
 }
